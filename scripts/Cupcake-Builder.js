@@ -1,6 +1,8 @@
 import { Cakes } from "./cake-types.js";
 import { Frostings } from "./frosting-flavors.js";
 import { Toppings } from "./toppings.js";
+import { PurchaseButton } from "./purchase-button.js";
+import { CupcakeOrders } from "./cupcake-orders.js";
 
 export const CupcakeBuilder = () => {
   return /*html*/ `
@@ -25,8 +27,13 @@ export const CupcakeBuilder = () => {
 
         </section>
     </article>
-    
+
     <article>
+        ${PurchaseButton()}
+    </article>
+    
+    <article class="cupcake__orders">
         <h3>Cupcakes</h3>
+        ${CupcakeOrders()}
     </article>`;
 };
