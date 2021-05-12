@@ -1,6 +1,12 @@
-import { getCakes } from "./database.js";
+import { getCakes, setCake } from "./database.js";
 
 const cakes = getCakes();
+
+document.addEventListener("change", (changeEvent) => {
+  if (changeEvent.target.name === "cakeType") {
+    setCake(parseInt(changeEvent.target.value));
+  }
+});
 
 export const Cakes = () => {
   let html = "<ul>";

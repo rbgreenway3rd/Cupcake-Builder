@@ -70,3 +70,31 @@ export const getFrostings = () => {
 export const getToppings = () => {
   return [...database.toppings];
 };
+
+export const setCake = (id) => {
+  database.cupcakeBuilder.cakeId = id;
+};
+
+export const setFrosting = (id) => {
+  database.cupcakeBuilder.frostingId = id;
+};
+
+export const setTopping = (id) => {
+  database.cupcakeBuilder.toppingId = id;
+};
+
+export const addCupcakeOrder = () => {
+    if (
+        "cakeId" in database.cupcakeBuilder &&
+        "frostingId" in database.cupcakeBuilder &&
+        "toppingId" in database.cupcakeBuilder 
+    ) {
+        const newCupcake = { ...database.cupcakeBuilder };
+        newCupcake.id = database.cupcakes.length > 0 ? [...database.cupcakes].pop().id + 1 : 1;
+        database.cupcakes.push(newCupcake);
+        database.cupcakeBuilder = {};
+        console.log(database.cupcakes)
+        return true:
+    }
+    return false;
+}
