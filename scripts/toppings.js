@@ -1,6 +1,12 @@
-import { getToppings } from "./database.js";
+import { getToppings, setTopping } from "./database.js";
 
 const toppings = getToppings();
+
+document.addEventListener("change", (changeEvent) => {
+  if (changeEvent.target.name === "toppingType") {
+    setTopping(parseInt(changeEvent.target.value));
+  }
+});
 
 export const Toppings = () => {
   let html = "<ul>";

@@ -27,6 +27,6 @@ export const CupcakeBuilder = () => {
     </article>
     
     <article>
-        <h3></h3>
+        <h3>Cupcakes</h3>
     </article>`;
 };
