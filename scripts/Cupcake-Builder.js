@@ -7,7 +7,7 @@ import { CupcakeOrders } from "./cupcake-orders.js";
 export const CupcakeBuilder = () => {
   return /*html*/ `
     <header class="header">
-        <h1 class="title">Cupcake Builder</h1>
+        <h1 class="title"><u>Cupcake Builder</u></h1>
     </header>
     
     <article class="options">
@@ -28,12 +28,12 @@ export const CupcakeBuilder = () => {
         </section>
     </article>
 
-    <article>
+    <article class="purchaseButton">
         ${PurchaseButton()}
     </article>
     
     <article class="cupcake__orders">
-        <h3>Cupcakes</h3>
+        <h3><u>Cupcakes:</u></h3>
         ${CupcakeOrders()}
     </article>`;
 };
